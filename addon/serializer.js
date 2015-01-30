@@ -1,8 +1,7 @@
 import DS from "ember-data";
 import Ember from 'ember';
 
-var singularize = Ember.String.singularize;
-var camelize = Ember.String.camelize;
+var underscore = Ember.String.underscore;
 
 export default DS.RESTSerializer.extend({
 
@@ -33,7 +32,7 @@ export default DS.RESTSerializer.extend({
 
   keyForRelationship: function(key, relationship) {
     if (relationship === 'belongsTo') {
-      return key + '_id';
+      return underscore(key) + '_id';
     }
     return key;
   }
