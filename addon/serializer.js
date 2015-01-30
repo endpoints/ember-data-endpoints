@@ -1,10 +1,10 @@
-import DS from "ember-data";
 import Ember from 'ember';
+import DS from 'ember-data';
 
 var dasherize = Ember.String.dasherize;
 var pluralize = Ember.String.pluralize;
 
-export default DS.RESTSerializer.extend({
+export default DS.ActiveModelSerializer.extend({
 
   normalize: function(type, hash, prop) {
     var links = hash.links;
@@ -29,13 +29,6 @@ export default DS.RESTSerializer.extend({
       delete payload.linked;
     }
     return this._super(payload);
-  },
-
-  keyForRelationship: function(key, relationship) {
-    if (relationship === 'belongsTo') {
-      return key + '_id';
-    }
-    return key;
   },
 
   serializeIntoHash: function(data, type, record, options) {
