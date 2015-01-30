@@ -1,8 +1,8 @@
 import DS from "ember-data";
 import Ember from 'ember';
 
-var singularize = Ember.String.singularize;
-var camelize = Ember.String.camelize;
+var dasherize = Ember.String.dasherize;
+var pluralize = Ember.String.pluralize;
 
 export default DS.RESTSerializer.extend({
 
@@ -36,5 +36,10 @@ export default DS.RESTSerializer.extend({
       return key + '_id';
     }
     return key;
+  },
+
+  serializeIntoHash: function(data, type, record, options) {
+    var root = dasherize(pluralize(type.typeKey));
+    data[root] = this.serialize(record, options);
   }
 });
