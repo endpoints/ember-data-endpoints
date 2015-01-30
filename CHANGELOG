@@ -1,0 +1,8 @@
+v2.0.0:
+  date: 2015-01-30
+  changes:
+    - Extend from ActiveModel instead of REST adapter/serializer
+v1.0.1:
+  date: 2015-01-19
+  changes:
+    - Dasherize URL paths.
