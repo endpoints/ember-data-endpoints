@@ -1,5 +1,4 @@
 # Ember-data-endpoints
-# Ember-data-hal-9000
 
 An ember-data adapter for [endpoints](https://github.com/endpoints/endpoints) APIs.
 
