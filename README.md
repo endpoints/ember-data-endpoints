@@ -27,8 +27,10 @@ export default EndpointsAdapter.extend({
 ```javascript
 // app/serializers/application.js
 
-import EndpointsAdapter from "ember-data-endpoints/adapter";
-export default EndpointsAdapter.extend({});
+import EndpointsSerializer from "ember-data-endpoints/serializer";
+export default EndpointsSerializer.extend({
+  //...
+});
 ```
 
 
