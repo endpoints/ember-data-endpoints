@@ -7,11 +7,12 @@ var pluralize = Ember.String.pluralize;
 export default DS.ActiveModelSerializer.extend({
 
   normalize: function(type, hash, prop) {
+    var newLinks = {};
     var links = hash.links;
     for (var key in links) {
       var linkedData = links[key];
       if (linkedData.href) {
-        hash[key] = linkedData.href;
+        newLinks[key] = linkedData.href;
       } else if (linkedData.ids) {
         hash[key] = linkedData.ids;
       } else {
@@ -19,6 +20,8 @@ export default DS.ActiveModelSerializer.extend({
       }
     }
     delete hash.links;
+    hash.links = newLinks;
+
     return this._super(type, hash, prop);
   },
 
