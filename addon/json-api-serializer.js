@@ -3,7 +3,7 @@
  */
 import Ember from 'ember';
 import DS from 'ember-data';
-var Serializer = DS.Serializer;
+var JSONSerializer = DS.JSONSerializer;
 
 var copy = Ember.copy;
 var get = Ember.get;
@@ -13,9 +13,9 @@ var map = Ember.ArrayPolyfills.map;
 /**
    @class JSONAPISerializer
    @namespace DS
-   @extends DS.Serializer
+   @extends DS.JSONSerializer
  */
-export default Serializer.extend({
+export default JSONSerializer.extend({
 
   keyForAttribute: function(key) {
     return Ember.String.dasherize(key);
