@@ -26,7 +26,7 @@ export default Serializer.extend({
   },
 
   normalizeTypeKey: function(typeKey) {
-    return Ember.String.camelize(typeKey);
+    return Ember.String.singularize(Ember.String.camelize(typeKey));
   },
 
   serializeTypeKey: function(typeKey) {
