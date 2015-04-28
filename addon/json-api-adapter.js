@@ -22,6 +22,10 @@ export default Adapter.extend(BuildURLMixin, {
 
   coalesceFindRequests: false,
 
+  headers: {
+    "ACCEPT": "application/vnd.api+json"
+  }
+
     /**
          @property host
          @type {String}
@@ -108,7 +112,7 @@ export default Adapter.extend(BuildURLMixin, {
 
 
   pathForType: function(typeKey) {
-    return Ember.String.dasherize(typeKey);
+    return Ember.String.pluralize(Ember.String.dasherize(typeKey));
   },
 
 
