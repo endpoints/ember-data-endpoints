@@ -24,7 +24,7 @@ export default Adapter.extend(BuildURLMixin, {
 
   headers: {
     "ACCEPT": "application/vnd.api+json"
-  }
+  },
 
     /**
          @property host
