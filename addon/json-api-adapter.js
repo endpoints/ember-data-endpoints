@@ -22,6 +22,10 @@ export default Adapter.extend(BuildURLMixin, {
 
   coalesceFindRequests: false,
 
+  headers: {
+    "ACCEPT": "application/vnd.api+json"
+  }
+
     /**
          @property host
          @type {String}
