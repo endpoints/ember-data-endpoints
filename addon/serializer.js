@@ -8,7 +8,7 @@ export default JSONAPISerializer.extend({
     return underscore(attr);
   },
 
-  keyForRelationship: function(rawKey, kind) {
+  keyForRelationship: function(rawKey) {
     return underscore(rawKey);
   }
 });

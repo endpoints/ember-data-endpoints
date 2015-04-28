@@ -59,7 +59,7 @@ export default Adapter.extend(BuildURLMixin, {
 
 
 
-  findBelongsTo: function(store, snapshot, link, relationship) {
+  findBelongsTo: function(store, snapshot, link) {
     var url, id, type;
 
     if (link.related) {
@@ -73,7 +73,7 @@ export default Adapter.extend(BuildURLMixin, {
     return this.ajax(url, 'GET');
   },
 
-  findHasMany: function(store, snapshot, link, relationship) {
+  findHasMany: function(store, snapshot, link) {
     var url; //, id, type, host;
 
     if (link.related) {
