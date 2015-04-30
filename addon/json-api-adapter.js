@@ -63,7 +63,7 @@ export default Adapter.extend(BuildURLMixin, {
     var url, id, type;
 
     if (link.related) {
-      url = link.related;
+      url = `${Ember.get(this,'host')}/${Ember.get(this,'namespace')}${link.related}`;
     } else {
       id = snapshot.id;
       type = snapshot.typeKey;
@@ -77,7 +77,7 @@ export default Adapter.extend(BuildURLMixin, {
     var url; //, id, type, host;
 
     if (link.related) {
-      url = link.related;
+      url = `${Ember.get(this,'host')}/${Ember.get(this,'namespace')}${link.related}`;
     } else {
       // TODO
       return;
