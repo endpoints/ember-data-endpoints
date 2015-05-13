@@ -9,7 +9,8 @@
   "scripts": {
     "start": "ember server",
     "build": "ember build",
-    "test": "ember test"
+    "test": "ember test",
+    "postinstall": "bower install"
   },
   "repository": "https://github.com/endpoints/ember-data-endpoints/",
   "engines": {
@@ -18,19 +19,18 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "broccoli-asset-rev": "^2.0.0",
-    "broccoli-ember-hbs-template-compiler": "^1.6.1",
-    "ember-cli": "0.1.7",
-    "ember-cli-content-security-policy": "0.3.0",
-    "ember-cli-dependency-checker": "0.0.7",
-    "ember-cli-6to5": "0.2.1",
+    "broccoli-asset-rev": "^2.0.3",
+    "ember-cli": "^0.2.3",
+    "ember-cli-app-version": "^0.3.3",
+    "ember-cli-babel": "^5.0.0",
+    "ember-cli-content-security-policy": "^0.4.0",
+    "ember-cli-dependency-checker": "0.0.8",
+    "ember-cli-htmlbars": "^0.7.6",
     "ember-cli-ic-ajax": "0.1.1",
     "ember-cli-inject-live-reload": "^1.3.0",
-    "ember-cli-qunit": "0.1.2",
-    "ember-data": "1.0.0-beta.12",
-    "ember-export-application-global": "^1.0.0",
-    "express": "^4.8.5",
-    "glob": "^4.0.5"
+    "ember-cli-qunit": "^0.3.11",
+    "ember-data": "^1.0.0-beta.16.1",
+    "ember-export-application-global": "^1.0.2"
   },
   "keywords": [
     "ember-addon"

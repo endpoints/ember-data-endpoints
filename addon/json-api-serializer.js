@@ -21,7 +21,7 @@ export default JSONSerializer.extend({
     return Ember.String.dasherize(key);
   },
 
-  keyForRelationship: function(key, kind) {
+  keyForRelationship: function(key) {
     return Ember.String.dasherize(key);
   },
 
@@ -35,7 +35,7 @@ export default JSONSerializer.extend({
 
 
 
-  extract: function(store, type, payload, id, requestType) {
+  extract: function(store, type, payload, id) {
     if (!payload.data) { return; }
 
     var dataType = Ember.typeOf(payload.data);
@@ -49,7 +49,7 @@ export default JSONSerializer.extend({
     }
   },
 
-  extractSingle: function(store, payload, id) {
+  extractSingle: function(store, payload) {
     var data;
 
     this.extractIncluded(store, payload.included);
