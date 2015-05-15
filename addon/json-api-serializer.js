@@ -83,6 +83,8 @@ export default JSONSerializer.extend({
     type = store.modelFor(typeName);
     typeSerializer = store.serializerFor(type);
 
+    data = this.extractAttributes(data);
+
     return typeSerializer.normalize(type, data);
   },
 
@@ -102,12 +104,26 @@ export default JSONSerializer.extend({
       type = store.modelFor(typeName);
       typeSerializer = store.serializerFor(type);
 
+      data = this.extractAttributes(data);
+
       hash = typeSerializer.normalize(type, data);
       store.push(typeName, hash);
     }, this);
   },
 
+  extractAttributes: function(data) {
+    var attr;
+    var attributes = Object.create(data.attributes);
+    delete attributes.id;
+    delete attributes.type;
 
+    // Object.assign(data, attributes);
+    for (attr in attributes) {
+      data[attr] = attributes[attr];
+    }
+
+    return data;
+  },
 
   serialize: function(snapshot, options) {
     var json = {};
