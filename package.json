@@ -1,6 +1,6 @@
 {
   "name": "ember-data-endpoints",
-  "version": "3.0.2",
+  "version": "3.1.0",
   "description": "The default blueprint for ember-cli addons.",
   "directories": {
     "doc": "doc",
