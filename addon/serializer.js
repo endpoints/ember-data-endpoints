@@ -1,9 +1,9 @@
 import Ember from 'ember';
-import JSONAPISerializer from './json-api-serializer';
+import DS from 'ember-data';
 
 var underscore = Ember.String.underscore;
 
-export default JSONAPISerializer.extend({
+export default DS.JSONAPISerializer.extend({
   keyForAttribute: function(attr) {
     return underscore(attr);
   },
