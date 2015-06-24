@@ -1,5 +1,5 @@
-import JSONAPIAdapter from './json-api-adapter';
+import DS from 'ember-data';
 
-export default JSONAPIAdapter.extend({
+export default DS.JSONAPIAdapter.extend({
   defaultSerializer: 'endpoints'
 });
